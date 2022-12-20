@@ -3,7 +3,7 @@ const app = express()
 const port = 3000
 
 app.get('/', (req, res) => {    //  / = root path   ?뒤에는 질의, 요청이 들어감 경로 = router
-  res.send('Hello World!')
+  res.send('<h1>조은지ㅣㅣㅣ</h1>')
 })
 
 app.get('/main', (req, res) => {    
