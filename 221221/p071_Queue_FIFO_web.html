@@ -29,7 +29,7 @@ class Queue{
         this.a.shift()
     }
     auto(){
-        for(let i =0;i<6;i++){
+        while(this.a.length>0){
             console.log(q.front()) // a에 있는 데이터중 첫번째를 보여줌
             q.deq() // a에 있는 첫번째 데이터를 삭제.
         }
