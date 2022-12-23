@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=>{
+            const einput = document.createElement("input");
+            const espan = document.createElement("span");
+            const ebutton = document.createElement("button");
+            const ep = document.createElement("p");
+            document.body.append(einput,espan,ebutton,ep);
+            ebutton.textContent= "계산";
+            espan.textContent= "달러";
+            let dollar = 1;
+            let won;
+            value().then(mydata=>{
+                console.log('환율정보읽음')
+                alert(`환율 정보가 현재가 ${mydata}원으로 갱신되었습니다.`)
+                ep.textContent = (`${mydata}원으로 갱신되었습니다.`)
+            })
+
+            ebutton.addEventListener("click",()=>{
+                const dollar = + einput.value;
+                if(isNaN(dollar)){
+                    ep.textContent= "숫자를 입력하세요.";
+                    return // 조기리턴
+                }
+                ep.textContent = (dollar*won).toLocaleString('ko-KR');
+                const url = 'https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD';
+                
+                fetch(url)
+                .then((response)=>response.json())
+                .then(data=>{
+                    ep.textContent = dollar*data[0].basePrice.toFixed(2).toLocalString('ko-KR');
+                    console.log(data[0].basePrice)});
+                })
+            })
+        // const arr = [{"code":"FRX.KRWUSD","currencyCode":"USD","currencyName":"달러","country":"미국","name":"미국 (KRW/USD)","date":"2022-12-23","time":"10:31:46","recurrenceCount":247,"basePrice":1283.50,"openingPrice":1276.10,"highPrice":1289.00,"lowPrice":1276.10,"change":"FALL","changePrice":4.50,"cashBuyingPrice":1305.96,"cashSellingPrice":1261.04,"ttBuyingPrice":1271.00,"ttSellingPrice":1296.00,"tcBuyingPrice":null,"fcSellingPrice":null,"exchangeCommission":6.1734,"usDollarRate":1.0000,"high52wPrice":1445.00,"high52wDate":"2022-10-13","low52wPrice":1190.10,"low52wDate":"2022-02-23","currencyUnit":1,"provider":"하나은행","timestamp":1671759115626,"id":79,"modifiedAt":"2022-12-23T01:31:56.000+0000","createdAt":"2016-10-21T06:13:34.000+0000","signedChangePrice":-4.50,"signedChangeRate":-0.0034937888,"changeRate":0.0034937888}]
+        // console.log(arr[0].basePrice)
+    </script>
+</body>
+</html>
