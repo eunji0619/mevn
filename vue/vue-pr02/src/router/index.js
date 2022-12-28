@@ -18,12 +18,22 @@ const routes = [
   {
     path: '/ex1',
     name: 'ex1',
-    component: () => import('../views/ex1.vue')
+    component: () => import(/* webpackChunkName: "ex" */'../views/ex1.vue')
   },
   {
     path: '/ex2',
     name: 'ex2',
-    component: () => import('../views/ex2.vue')
+    component: () => import(/* webpackChunkName: "ex" */'../views/ex2.vue')
+  },
+  {
+    path: '/ex3',
+    name: 'ex3',
+    component: () => import(/* webpackChunkName: "ex" */'../views/ex3.vue')
+  },
+  {
+    path: '/ex4',
+    name: 'ex4',
+    component: () => import(/* webpackChunkName: "ex" */'../views/ex4.vue')
   }
 ]
 

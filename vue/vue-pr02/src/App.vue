@@ -1,8 +1,10 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/ex1.vue">예제1</router-link>
-    <router-link to="/ex2.vue">예제2</router-link>
+    <router-link to="/ex1">예제1</router-link> |
+    <router-link to="/ex2">예제2</router-link> |
+    <router-link to="/ex3">예제3</router-link> |
+    <router-link to="/ex4">예제4</router-link>
   </nav>
   <router-view />
 </template>

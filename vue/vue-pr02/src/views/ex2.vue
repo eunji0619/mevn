@@ -26,17 +26,17 @@
 </template>
 
 <script>
-import data from "../assets/prodectData.js";
+import data from '../assets/productData.js'
 export default {
-  name: "app",
+  name: 'app',
   data() {
     return {
       inUser: 0,
-      dataArr: data,
-    };
+      dataArr: data
+    }
   },
-  methods: {},
-};
+  methods: {}
+}
 </script>
 
 <style></style>

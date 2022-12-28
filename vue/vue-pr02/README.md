@@ -1,4 +1,4 @@
-# vue-pr02
+# vue_pr03
 
 ## Project setup
 ```
