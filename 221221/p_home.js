@@ -1,7 +1,8 @@
-const express = require('express')
-import express from express;
+// const express = require('express')
+import express from 'express';
 
-const logger = require('morgan');
+// const logger = require('morgan');
+import logger from 'morgan';
 const app = express()
 const port = 3000
 
