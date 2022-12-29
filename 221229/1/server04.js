@@ -22,7 +22,7 @@ app.post('/info', function (req, res) { //암호화
     const id = req.body.iid;
     const passwd = req.body.ipw;
 
-    res.send(id, passwd)
+    res.send('확인되었습니다.')
 })
 
 app.listen(port, () => {

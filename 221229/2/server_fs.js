@@ -11,7 +11,7 @@ console.log(_path)
 app.use('/', express.static(_path))
 app.use(logger('tiny'))
 
-//CRUD
+// CRUD
 const file = 'test1'
 const data = '와 nodejs로 작성햇다'
 fs.writeFile(_path + file + '.txt', data, (e) => {
