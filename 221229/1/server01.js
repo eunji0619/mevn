@@ -5,7 +5,7 @@ const logger = require('morgan')
 
 const app = express()
 const port = 3000
-const _path = path.join(__dirname, '/dist')
+const _path = path.join(__dirname, '/')
 console.log(_path)
 
 app.use('/', express.static(_path))
