@@ -29,7 +29,8 @@ io.on('connection', (socket) => {
             io.emit('chat', msg)
         }
         else {
-            io.to(idInfo[toname].emit('chat',))
+            socket.emit('chat', msg)
+            io.to(idInfo[toname].emit('chat', msg))//특정 상대에게 보냄
         }
         io.emit('chat', msg) //보낼 내용
     })

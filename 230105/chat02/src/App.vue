@@ -2,11 +2,37 @@
   <div>
     <nav>
       <router-link to="/">채팅</router-link> |
-      <router-link to="/about">채팅목록</router-link>
+      <router-link to="/about">채팅목록</router-link> |
+      <router-link to="/Main">Main</router-link> |
     </nav>
     <router-view />
   </div>
+  <div>
+    <button @click="clickList()">Query 프로그래밍 방식</button>
+  </div>
+  <router-link
+    :to="{ name: 'Query', query: { name: 'Query선언적 방식', age: 10 } }"
+    >Query선언적방식 |
+  </router-link>
+  <router-link
+    :to="{ name: 'Params', params: { name: 'Params선언적 방식', age: 10 } }"
+    >Params선언적 방식
+  </router-link>
 </template>
+
+<script>
+export default {
+  name: 'App',
+  methods: {
+    clickList() {
+      this.$router.push({
+        name: 'Query',
+        query: { name: 'Query선언적 방식', age: 10 }
+      })
+    }
+  }
+}
+</script>
 
 <style>
 #app {
