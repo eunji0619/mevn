@@ -4,14 +4,14 @@ const mongoose = require('mongoose')
 const USER = process.env.dbid;
 const PWD = process.env.dbpw;
 const HOST = process.env.dbhost;
-const DB = 'mdb'
+const DB = 'test2'
 const mongodbURL = `mongodb://${USER}:${PWD}@${HOST}/${DB}`
-// mongoose.set('useFindAndModify', false);    //6.0이후부터는 자동관리
-mongoose.set(`strictQuery`, false)  //6.0이후 권장사항
+
+mongoose.set(`strictQuery`, false)
 mongoose
     .connect(mongodbURL, { useNewUrlParser: true })
     .then(() => console.log('connection succesful'))
     .catch((err) => console.log(err));
-const Photo = require('./p343/photo.js')
-// module.exports = { mongoose, Photo }
-module.exports = Photo
+const chatBot = require('./chatbot.js')
+
+module.exports = chatBot
